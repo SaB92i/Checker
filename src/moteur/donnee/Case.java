@@ -39,7 +39,7 @@ public class Case {
         this.couleur = Color.decode(couleur);
     }
 
-    public boolean isMegapion(Pion pion) {return pion.isMega();}
+    public boolean isMegapion(Pion pion) {return pion.estUnMegaPion();}
 
 
 }

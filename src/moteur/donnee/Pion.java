@@ -22,7 +22,7 @@ public class Pion {
         return couleur;
     }
 
-    public boolean isMega() {
+    public boolean estUnMegaPion() {
         return mega;
     }
 

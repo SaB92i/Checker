@@ -38,7 +38,7 @@ public class Tablier {
                     matrice[l][c] = new Case( new Color(000000));
                 }
                 else {
-                    matrice[l][c] = new Case( new Color(0x534F4F));
+                    matrice[l][c] = new Case(Color.gray);
                 }
             }
         }
