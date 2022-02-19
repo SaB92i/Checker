@@ -13,6 +13,9 @@ import java.awt.event.MouseListener;
      private boolean clic;
      Case casedepart;
      Window dashboard;
+     int cdx, cdy;
+
+
 
      public Souris(Tablier tablier, Window dashboard) {
         this.tablier=tablier;
@@ -20,30 +23,36 @@ import java.awt.event.MouseListener;
      }
 
     public void mouseClicked(MouseEvent e) {
-        int c2 = e.getX() / Configuration.TAILLE_CASE;
-        int l2 = e.getY() / Configuration.TAILLE_CASE;
+        int l2 = e.getX() / Configuration.TAILLE_CASE;
+        int c2 = e.getY() / Configuration.TAILLE_CASE;
+        Case c = tablier.getMatrice()[c2][l2];
 
-        Case c = tablier.getMatrice()[l2][c2];
         if (c.estUnPion() && !clic) {
-            casedepart=c;
-            clic=true;
+            casedepart = c;
+            cdx=l2;
+            cdy=c2;
+            clic = true;
             System.out.println("premier clic");
             System.out.println(clic);
         }
         if (!c.estUnPion() && clic) {
-            clic=false;
-            Pion p =casedepart.getPion();
-            casedepart.setPion(null);
-            c.setPion(p);
-            dashboard.repaint();
+            Accepteur a = new Accepteur(l2,c2,cdx,cdy,tablier);
+            boolean test=a.accepte();
+            System.out.println(test);
+            if (test==true){
+                System.out.println("déplacement valide");
+                clic=false;
+                Pion p =casedepart.getPion();
+                casedepart.setPion(null);
+                c.setPion(p);
+                dashboard.repaint();
+                System.out.println("deuxieme clic");
+            }
+            else {
+                System.out.println("INTERDIT");
+                clic=false;
+            }
         }
-
-
-
-
-
-
-
     }
 
     @Override

@@ -27,7 +27,8 @@ public class Tablier {
     }
 
     private void ajoutPion() {
-        matrice[0][0].setPion(new Pion(Color.BLUE));
+        matrice[5][5].setPion(new Pion(Color.BLUE));
+        matrice[7][7].setPion(new Pion(Color.BLUE));
 
     }
 
