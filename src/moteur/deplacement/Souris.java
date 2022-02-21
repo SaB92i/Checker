@@ -27,6 +27,7 @@ import java.awt.event.MouseListener;
         int c2 = e.getY() / Configuration.TAILLE_CASE;
         Case c = tablier.getMatrice()[c2][l2];
 
+
         if (c.estUnPion() && !clic) {
             casedepart = c;
             cdx=l2;
@@ -35,7 +36,7 @@ import java.awt.event.MouseListener;
             System.out.println("premier clic");
             System.out.println(clic);
         }
-        if (!c.estUnPion() && clic) {
+        if (!c.estUnPion() && clic ) {
             Accepteur a = new Accepteur(l2,c2,cdx,cdy,tablier);
             boolean test=a.accepte();
             System.out.println(test);

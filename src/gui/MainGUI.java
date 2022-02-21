@@ -21,7 +21,7 @@ public class MainGUI extends JFrame implements Runnable {
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
-        tablier = new Tablier(10, 10);
+        tablier = new Tablier(21, 21);
         dashboard = new Window(tablier);
         Souris souris = new Souris(tablier,dashboard);
         dashboard.addMouseListener(souris);
@@ -36,7 +36,7 @@ public class MainGUI extends JFrame implements Runnable {
         pack();
         setVisible(true);
         setResizable(false);
-        setPreferredSize(new Dimension(tablier.getNbLigne() * 33, tablier.getNbColonne() * 33));
+        //setPreferredSize(new Dimension(tablier.getNbLigne() * 33, tablier.getNbColonne() * 33));
         setLocationRelativeTo(null);
     }
 

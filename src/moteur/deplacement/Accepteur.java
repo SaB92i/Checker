@@ -3,6 +3,8 @@ package moteur.deplacement;
 import moteur.donnee.Case;
 import moteur.donnee.Tablier;
 
+import java.awt.*;
+
 public class Accepteur {
     boolean autorise;
     int x, y, cdx, cdy;
@@ -17,6 +19,7 @@ public class Accepteur {
     this.tablier=tablier;
     }
     public boolean accepte(){
+
         //deplacement a gauche
         if (x-cdx==-2 && y==cdy){
             autorise=true;
@@ -88,6 +91,9 @@ public class Accepteur {
             if (c.estUnPion()) {
                 autorise = true;
             }
+        }
+        if ((tablier.getMatrice()[y][x].getCouleur().equals(Color.lightGray))){
+            autorise=false;
         }
         return autorise;
     }
