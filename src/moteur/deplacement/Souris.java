@@ -36,11 +36,15 @@ import java.awt.event.MouseListener;
             System.out.println("premier clic");
             System.out.println(clic);
         }
+        else{
+            if (c.estUnPion() && clic){
+                System.out.println("relache le pion morray");
+                clic=false;
+            }
+        }
         if (!c.estUnPion() && clic ) {
             Accepteur a = new Accepteur(l2,c2,cdx,cdy,tablier);
-            boolean test=a.accepte();
-            System.out.println(test);
-            if (test==true){
+            if (a.accepte()){
                 System.out.println("déplacement valide");
                 clic=false;
                 Pion p =casedepart.getPion();

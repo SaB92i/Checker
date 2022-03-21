@@ -21,12 +21,12 @@ public class MainGUI extends JFrame implements Runnable {
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
-        tablier = new Tablier(21, 21);
+        tablier = new Tablier(17, 25);
         dashboard = new Window(tablier);
         Souris souris = new Souris(tablier,dashboard);
         dashboard.addMouseListener(souris);
 
-        dashboard.setPreferredSize(new Dimension(tablier.getNbLigne() * Configuration.TAILLE_CASE, tablier.getNbColonne() * Configuration.TAILLE_CASE));
+        dashboard.setPreferredSize(new Dimension(tablier.getNbColonne() * Configuration.TAILLE_CASE,tablier.getNbLigne() * Configuration.TAILLE_CASE));
         contentPane.add(dashboard, BorderLayout.CENTER);
 
         contentPane.add(BorderLayout.EAST, panel);
