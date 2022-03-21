@@ -6,7 +6,7 @@ public class Tablier {
     private int nbcolonne;
     private String forme;
     private Case[][] matrice;
-    private int nbjoueur, decal=0,decal2=0;
+    private int nbjoueur;
     private boolean reglespe;
 
 
@@ -23,20 +23,61 @@ public class Tablier {
         this.nbligne = nbligne;
         this.nbcolonne = nbcolonne;
         matrice = new Case[nbligne][nbcolonne];
-        couleurCase("oui");
+        CreerCase("oui");
         ajoutPion("oui");
     }
 
     private void ajoutPion(String forme) {
-        for (int i=4;i<8;i++) {
-            for (int j=0;j<=7;) {
-                matrice[4][0].setPion(new Pion(Color.BLUE));
+        int decal=0,j=0;
+        //Création du triangle de départ bleu
+        for (int i=4;i<=7;i++) {
+            j=0+decal;
+            decal++;
+            while (j<=7-decal) {
+                if (i==4 && j==0){
+                    matrice[i][j].setPion(new Pion(Color.BLUE,true));
+                }
+                else {
+                    matrice[i][j].setPion(new Pion(Color.BLUE));
+                }
+                j+=2;
+            }
+        }
+        decal=0;
+        //Création du triangle de départ rouge
+        for (int i=13;i<=16;i++) {
+            j=9+decal;
+            decal++;
+            while (j<=16-decal) {
+                if (i==16 && j==12){
+                    matrice[i][j].setPion(new Pion(Color.RED,true));
+                }
+                else {
+                    matrice[i][j].setPion(new Pion(Color.RED));
+                }
+                j+=2;
+            }
+        }
+        decal=0;
+        //Création du triangle de départ rose
+        for (int i=4;i<=7;i++) {
+            j=18-decal;
+            decal--;
+            while (j<=25+decal) {
+                if (i==4 && j==24){
+                    matrice[i][j].setPion(new Pion(Color.PINK,true));
+                }
+                else {
+                    matrice[i][j].setPion(new Pion(Color.PINK));
+                }
+                j+=2;
             }
         }
 
     }
 
-    private void couleurCase(String forme) {
+    private void CreerCase(String forme) {
+        int decal=0,decal2=0;
         for (int l = 0; l < nbligne; l++) {
 
             for (int c = 0; c < nbcolonne; c++) {

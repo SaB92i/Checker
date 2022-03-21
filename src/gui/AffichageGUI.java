@@ -37,11 +37,43 @@ public class AffichageGUI {
                     if (cases[l][c].getPion().getCouleur() == Color.BLUE) {
                         graphics.setColor(cases[l][c].getCouleur());
                         graphics.fillRect(c * tailleCase, l * tailleCase,tailleCase, tailleCase);
-                        graphics.setColor(Color.CYAN);
+                        if (cases[l][c].getPion().estUnMegaPion()){
+                            graphics.setColor(Color.BLUE);
+                        }
+                        else {
+                            graphics.setColor(Color.CYAN);
+                        }
                         graphics.fillRoundRect(c * tailleCase, l * tailleCase, tailleCase, tailleCase, tailleCase, tailleCase);
                     }
                 }
-
+                if (cases[l][c].estUnPion()) {
+                    if (cases[l][c].getPion().getCouleur() == Color.RED) {
+                        graphics.setColor(cases[l][c].getCouleur());
+                        graphics.fillRect(c * tailleCase, l * tailleCase,tailleCase, tailleCase);
+                        if (cases[l][c].getPion().estUnMegaPion()){
+                            graphics.setColor(Color.decode("#660000"));
+                        }
+                        else {
+                            graphics.setColor(Color.RED);
+                        }
+                        graphics.fillRoundRect(c * tailleCase, l * tailleCase, tailleCase, tailleCase, tailleCase, tailleCase);
+                    }
+                }
+                if (cases[l][c].estUnPion()) {
+                    if (cases[l][c].getPion().getCouleur() == Color.PINK) {
+                        graphics.setColor(cases[l][c].getCouleur());
+                        graphics.fillRect(c * tailleCase, l * tailleCase,tailleCase, tailleCase);
+                        if (cases[l][c].getPion().estUnMegaPion()){
+                            graphics.setColor(Color.decode("#9900FF"));
+                        }
+                        else {
+                            graphics.setColor(Color.decode("#FF00FF"));
+                        }
+                        graphics.fillRoundRect(c * tailleCase, l * tailleCase, tailleCase, tailleCase, tailleCase, tailleCase);
+                    }
+                }
+                graphics.setColor(Color.orange);
+                graphics.drawRect(9*tailleCase,5*tailleCase, tailleCase*7, tailleCase*6);
             }
         }
     }

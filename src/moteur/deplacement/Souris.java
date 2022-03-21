@@ -43,7 +43,7 @@ import java.awt.event.MouseListener;
             }
         }
         if (!c.estUnPion() && clic ) {
-            Accepteur a = new Accepteur(l2,c2,cdx,cdy,tablier);
+            Accepteur a = new Accepteur(l2,c2,cdx,cdy,casedepart,tablier);
             if (a.accepte()){
                 System.out.println("déplacement valide");
                 clic=false;
