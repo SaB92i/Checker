@@ -20,7 +20,7 @@ public class AffichageGUI {
 
             for (int c = 0; c < cases[l].length; c++) {
 
-
+                //affichage des cases
                 if (Objects.equals(cases[l][c].getCouleur(), Color.gray) && !cases[l][c].estUnPion()) {
                     graphics.setColor(Color.gray);
                     graphics.fillRect(c * tailleCase, l * tailleCase, tailleCase, tailleCase);
@@ -33,6 +33,8 @@ public class AffichageGUI {
                     graphics.setColor(Color.lightGray);
                     graphics.fillRect(c * tailleCase, l * tailleCase, tailleCase, tailleCase);
                 }
+
+                //affichage des pions/megapions de couleur bleu
                 if (cases[l][c].estUnPion()) {
                     if (cases[l][c].getPion().getCouleur() == Color.BLUE) {
                         graphics.setColor(cases[l][c].getCouleur());
@@ -46,6 +48,8 @@ public class AffichageGUI {
                         graphics.fillRoundRect(c * tailleCase, l * tailleCase, tailleCase, tailleCase, tailleCase, tailleCase);
                     }
                 }
+
+                //affichage des pions/megapions de couleur rouge
                 if (cases[l][c].estUnPion()) {
                     if (cases[l][c].getPion().getCouleur() == Color.RED) {
                         graphics.setColor(cases[l][c].getCouleur());
@@ -59,6 +63,8 @@ public class AffichageGUI {
                         graphics.fillRoundRect(c * tailleCase, l * tailleCase, tailleCase, tailleCase, tailleCase, tailleCase);
                     }
                 }
+
+                //affichage des pions/megapions de couleur rose
                 if (cases[l][c].estUnPion()) {
                     if (cases[l][c].getPion().getCouleur() == Color.PINK) {
                         graphics.setColor(cases[l][c].getCouleur());
@@ -72,7 +78,8 @@ public class AffichageGUI {
                         graphics.fillRoundRect(c * tailleCase, l * tailleCase, tailleCase, tailleCase, tailleCase, tailleCase);
                     }
                 }
-                graphics.setColor(Color.orange);
+                //Affichage de la zone bonus
+                graphics.setColor(Color.green);
                 graphics.drawRect(9*tailleCase,5*tailleCase, tailleCase*7, tailleCase*6);
             }
         }

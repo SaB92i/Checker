@@ -96,8 +96,8 @@ public class Accepteur {
                 }
             }
         }
-        //déplcament des méga pions
-        if (cased.getPion().estUnMegaPion() || ((cased.estUnPion() && ((x<15)&&(x>9))&&(y<10)&&(y>5)))){
+        //déplcament des méga pions/des pions dans la zone bonus
+        if (cased.getPion().estUnMegaPion() || ((cased.estUnPion() && ((x<=15)&&(x>=9))&&(y<=10)&&(y>=5)))){
             //deplacement a gauche
             if (x-cdx==-4 && y==cdy){
                 autorise=true;

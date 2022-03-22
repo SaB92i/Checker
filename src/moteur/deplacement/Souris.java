@@ -33,12 +33,11 @@ import java.awt.event.MouseListener;
             cdx=l2;
             cdy=c2;
             clic = true;
-            System.out.println("premier clic");
-            System.out.println(clic);
+            System.out.println("Pion selectionné");
         }
         else{
             if (c.estUnPion() && clic){
-                System.out.println("relache le pion morray");
+                System.out.println("Pion relaché");
                 clic=false;
             }
         }
@@ -51,7 +50,7 @@ import java.awt.event.MouseListener;
                 casedepart.setPion(null);
                 c.setPion(p);
                 dashboard.repaint();
-                System.out.println("deuxieme clic");
+                System.out.println("Déplacement effectué");
             }
             else {
                 System.out.println("INTERDIT");
