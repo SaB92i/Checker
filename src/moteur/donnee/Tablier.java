@@ -7,25 +7,28 @@ public class Tablier {
     private String forme;
     private Case[][] matrice;
     private int nbjoueur;
-    private boolean reglespe;
 
 
-    public Tablier(String forme, int nbjoueur, boolean reglespe) {
-        this.forme = forme;
-        this.nbjoueur = nbjoueur;
-        this.reglespe = reglespe;
-        //taille a définir
-        matrice = new Case[40][40];
+
+    public Tablier(String forme, int nbjoueur) {
+        if (forme=="carre") {
+            this.nbligne=17;
+            this.nbcolonne=25;
+
+        }
+        matrice = new Case[nbligne][nbcolonne];
+        CreerCase("oui");
+        ajoutPion("oui");
     }
 
-    public Tablier(int nbligne, int nbcolonne) {
+    /*public Tablier(int nbligne, int nbcolonne) {
         // créer carré
         this.nbligne = nbligne;
         this.nbcolonne = nbcolonne;
         matrice = new Case[nbligne][nbcolonne];
         CreerCase("oui");
         ajoutPion("oui");
-    }
+    }*/
 
     private void ajoutPion(String forme) {
         int decal=0,j=0;
